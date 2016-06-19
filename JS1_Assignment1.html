@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Learning Javascript-1: Assignment 1</title>
+	<script type="text/javascript">
+		
+		function calcCircleArea()
+		{
+			var r=prompt("Enter the radius");
+			if(r>=0)
+			{
+				console.log(3.14*r*r);
+				alert("The radius is:"+3.14*r*r);
+			}
+			else
+			{
+				alert("Invalid Input");
+			}
+		}
+		function showtime()
+		{
+			time=new Date();
+			var min=time.getMinutes();
+			if(min<10)
+			{
+				min='0'+min;
+			}
+			console.log(time.getHours()+":"+min);
+		}
+
+		function myFunction()
+		{
+			document.getElementById('myP').innerHTML="Hello World!";
+		}
+
+		var array=[32, 45, 12, 92, 52, 35, 6, 67, 15, 76];
+		function calcmin()
+		{
+			var min=array[0];
+			for(var i=0;i<array.length;i++)
+			{
+				if(array[i]<min)
+					min=array[i];
+			}
+			console.log(min);
+			alert(min);
+		}
+
+		function calcmax()
+		{
+			var max=array[0];
+			for(var i=0;i<array.length;i++)
+			{
+				if(array[i]>max)
+					max=array[i];
+			}
+			console.log(max);
+			alert(max);
+		}
+
+		function iterate()
+		{
+			var elem=document.getElementById('ip');
+			for(var i=1;i<=100;i++)
+			{
+				if(i%3==0 && i%5==0)
+				{
+					console.log("FizzBuzz");
+					elem.innerHTML+="FizzBuzz<br>";
+				}
+
+
+				else if(i%3==0)
+				{
+					console.log("Fizz");
+					elem.innerHTML+="Fizz<br>";
+				}
+				else if(i%5==0)
+				{
+					console.log("Buzz");
+					elem.innerHTML+="Buzz<br>";
+				}
+				
+				else
+				{
+					console.log(i);
+					elem.innerHTML+=i+"<br>";
+				}
+			}
+		}
+	</script>
+</head>
+<body onload="myFunction()">
+	<form onsubmit="calcCircleArea();" method="post">
+		<input type="submit" value="Calculate Area of the Circle"/>	
+	</form><br>
+	<button onclick="showtime();">Show Time</button>
+	<p id="myP"></p>
+	<p>The array is 32 45 12 92 52 35 6 67 15 76</p>
+	<button onclick="calcmin();">Min of the Array</button>
+	<button onclick="calcmax();">Max of the Array</button>
+	<button onclick="iterate();">Iterate from 1-100</button>
+	<p id="ip"></p>
+</body>
+</html>
